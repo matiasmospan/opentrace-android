@@ -28,10 +28,18 @@ def getGitHash = { ->
 }
 
 android {
+    signingConfigs {
+        release {
+            storeFile file('/home/mstyi/AndroidStudioProjects/keystoreapk.jks')
+            storePassword 'matias'
+            keyAlias = 'apkkey'
+            keyPassword 'matias'
+        }
+    }
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "io.bluetrace.opentrace"
+        applicationId "covid19_8bea8.android"
         resValue "string", "build_config_package", "io.bluetrace.opentrace"
         minSdkVersion 22
         targetSdkVersion 29
@@ -101,6 +109,7 @@ android {
             multiDexEnabled false
             zipAlignEnabled true
             resValue "string", "app_name", "OpenTrace"
+            signingConfig signingConfigs.release
 
             lintOptions {
                 // Ignore lint errors for now

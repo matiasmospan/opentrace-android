@@ -576,7 +576,7 @@ class OnboardingActivity : FragmentActivity(),
                 3 -> return SetupFragment()
                 4 -> return SetupCompleteFragment()
                 else -> {
-                    RegisterNumberFragment()
+                    SetupCompleteFragment()
                 }
             }
         }
